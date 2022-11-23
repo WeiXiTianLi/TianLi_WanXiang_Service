@@ -13,16 +13,16 @@ namespace TianLi_WanXiang_Service.Controllers
             _logger = logger;
         }
 
-        //[HttpGet(Name = "GetWeatherForecast")]
-        //public IEnumerable<WanXiangObject> Get()
-        //{
-        //    return Enumerable.Range(1, 5).Select(index => new WanXiangObject
-        //    {
-        //        Date = DateTime.Now.AddDays(index),
-        //        TemperatureC = Random.Shared.Next(-20, 55),
-        //        Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-        //    })
-        //    .ToArray();
-        //}
+        // POST: WanXiangObject
+        // Route: PostObject
+        [HttpPost]
+        //[Route("PostObject")]
+        public void Post([FromBody] WanXiangObject value)
+        {
+            
+            
+
+
+        }
     }
 }
