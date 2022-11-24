@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace TianLi_WanXiang_Service
 {
     public class WanXiangObject
@@ -11,7 +13,8 @@ namespace TianLi_WanXiang_Service
         public double Z { get; set; }
 
         public int MapId { get; set; }
-
-        public string? ObjectName { get; set; }
+        
+        [Required]
+        public string ObjectName { get; set; } = string.Empty;
     }
 }
