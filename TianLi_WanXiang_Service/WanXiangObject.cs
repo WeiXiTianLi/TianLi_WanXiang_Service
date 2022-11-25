@@ -16,5 +16,7 @@ namespace TianLi_WanXiang_Service
         
         [Required]
         public string ObjectName { get; set; } = string.Empty;
+
+        public string ExtendedFieldJson { get; set; } = string.Empty;
     }
 }
