@@ -17,12 +17,23 @@ namespace TianLi_WanXiang_Service.Controllers
         // Route: PostObject
         [HttpPost]
         //[Route("PostObject")]
-        public void Post([FromBody] WanXiangObject value)
+        public ActionResult Post([FromBody] WanXiangObject value)
         {
-            
-            
+            // Console Print value to console
+            Console.WriteLine(value.ObjectName);
+            if (value.X == 0 && value.Y == 0 && value.Z == 0)
+            {
+                return BadRequest();
+            }
+            if (value.ObjectName is null || value.ObjectName == "")
+            {
+                return BadRequest();
+            }
 
 
+
+
+            return Ok();
         }
     }
 }
