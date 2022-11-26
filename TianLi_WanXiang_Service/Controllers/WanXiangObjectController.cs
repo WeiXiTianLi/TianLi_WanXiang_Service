@@ -29,11 +29,8 @@ namespace TianLi_WanXiang_Service.Controllers
             {
                 return BadRequest();
             }
-
-
-
-
             return Ok();
         }
+        
     }
 }

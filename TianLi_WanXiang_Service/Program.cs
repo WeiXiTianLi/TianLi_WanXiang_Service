@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 
 // Add DbContext
 builder.Services.AddDbContext<ObjectContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("WanXiangContext")));
+    options.UseMySql(builder.Configuration.GetConnectionString("WanXiangContext"), ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("WanXiangContext"))));
 
 var app = builder.Build();
 
