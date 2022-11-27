@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/TianLi_WanXiang_Web/dist
+/TianLi_WanXiang_Service/appsettings.json
