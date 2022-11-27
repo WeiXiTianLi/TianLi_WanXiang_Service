@@ -15,6 +15,17 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ObjectContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("WanXiangContext"), ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("WanXiangContext"))));
 
+// Add CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -37,6 +48,8 @@ app.UseHttpsRedirection();
 //app.UseStaticFiles();
 
 //app.UseRouting();
+
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 
